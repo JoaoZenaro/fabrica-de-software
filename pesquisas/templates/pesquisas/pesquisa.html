@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="col-md-12 portHeader"><h1>{{pesquisa.title}}</h1></div>
+
+<section class="projetoPortfolio">
+    <div class="container">
+        <div class="row">
+            <div style="margin-left: 70px;">
+                <div class="col-md-4">
+                    <div>
+                        <img src="/media/{{pesquisa.thumbnail}}" alt="">
+                    </div>
+                    
+                </div>
+                <div class="col-md-8 postBody">
+                    <h1>{{pesquisa.title}}</h1>
+                    <span>Criado em: {{pesquisa.created_at}}</span><br>
+                    <span>Ultima atualização em: {{pesquisa.updated_at}}</span><br>
+                    {{pesquisa.body|safe}}
+    
+                    {% if not pesquisa.imagens_set.all %}
+    
+                    {% else %}
+                    <h2>Galeria</h2>
+                    <section class="image-grid">
+                        {% for img in pesquisa.imagens_set.all %}
+                        <a href="/media/{{img.img}}">
+                            <img class="galleryImg" src="/media/{{img.img}}" alt="">
+                        </a>
+                        {% endfor %}
+                    </section>
+                    {% endif %}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+{% endblock %}

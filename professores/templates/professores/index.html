@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="col-md-12 portHeader"><h1>Professores</h1></div>
+
+<div class="container pgPortCont">
+    {% for prof in profs %}
+    <div class="col-md-4 col-sm-6 pgPortProj">
+      <div class="cursos-destaque-item">
+        <div class="single-item curso-item curso-extra-item">
+            <div class="single-item-image overlay-effect lazy" style="background: url('{{prof.img.url}}'); background-position: center; background-size: cover;">
+                <a href=""></a></div>
+            <div class="single-item-text">
+                <h4 class="curso-extra-item-title"><a href="">{{prof.nome}}</a></h4>
+                {{prof.descricao}}<br><br><br>
+            </div>
+            <div class="button-bottom"><a href="{{prof.contato}}" class="button-default">Entre em contato</a> </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}

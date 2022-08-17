@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="col-md-12 portHeader"><h1>Portfólio</h1></div>
+
+<div class="container pgPortCont">
+  {% for projeto in projetos %}
+  <div class="col-md-4 col-sm-6 pgPortProj">
+    <div class="cursos-destaque-item">
+      <div class="single-item curso-item curso-extra-item">
+          <div class="single-item-image overlay-effect lazy" style="background: url('{{projeto.thumbnail.url}}'); background-position: center; background-size: cover;">
+              <a href="/portfolio/{{projeto.slug}}"></a></div>
+          <div class="single-item-text">
+              <h4 class="curso-extra-item-title"><a href="/portfolio/{{projeto.slug}}">{{projeto.title}}</a></h4>
+              {{projeto.body|safe|truncatewords:25|slice:"-4"}}...
+          </div>
+          <div class="button-bottom"> <a href="/portfolio/{{projeto.slug}}" class="button-default">Saiba mais</a> </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

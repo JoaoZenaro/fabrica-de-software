@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="col-md-12 portHeader"><h1>Sobre</h1></div>
+
+<section class="sobre">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 postBody sobreBody">
+                {{sobre.body|safe}}
+            
+                {% if not sobre.logo.all %}
+        
+                {% else %}
+                    <h2>Parceiros</h2>
+                    <section class="parceiros">
+                        {% for parc in sobre.logo.all %}
+                        <div class="parceiro">
+                            <img class="galleryImg" src="/media/{{parc.img}}" alt="">
+                            <h3>{{parc.name}}</h3>
+                        </div>
+                        {% endfor %}
+                    </section>
+                {% endif %}
+    
+                {% if not sobre.imagens_set.all %}
+            
+                {% else %}
+                <h2>Galeria</h2>
+                <section class="image-grid">
+                    {% for img in sobre.imagens_set.all %}
+                    <a href="/media/{{img.img}}">
+                        <img class="galleryImg" src="/media/{{img.img}}" alt="">
+                    </a>
+                    {% endfor %}
+                </section>
+                {% endif %}
+                <span>Criado em: {{sobre.created_at}}</span><br>
+                <span>Ultima atualização em: {{sobre.updated_at}}</span><br>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

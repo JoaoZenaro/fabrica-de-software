@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="col-md-12 portHeader"><h1>{{projeto.title}}</h1></div>
+
+<section class="projetoPortfolio">
+    <div class="container">
+        <div class="row">
+            <div style="margin-left: 70px;">
+                <div class="col-md-4">
+                    <div>
+                        <img src="/media/{{projeto.thumbnail}}" alt="">
+                    </div>
+                    
+                </div>
+                <div class="col-md-8 postBody">
+                    <h1>{{projeto.title}}</h1>
+                    <span>Criado em: {{projeto.created_at}}</span><br>
+                    <span>Ultima atualização em: {{projeto.updated_at}}</span><br>
+                    {{projeto.body|safe}}
+    
+                    {% if not projeto.logo.all %}
+    
+                    {% else %}
+                        <h2>Parceiros</h2>
+                        <section class="parceiros">
+                            {% for parc in projeto.logo.all %}
+                            <div class="parceiro">
+                                <img class="galleryImg" src="/media/{{parc.img}}" alt="">
+                                <h3>{{parc.name}}</h3>
+                            </div>
+                            {% endfor %}
+                        </section>
+                    {% endif %}
+    
+                    {% if not projeto.imagens_set.all %}
+    
+                    {% else %}
+                    <h2>Galeria</h2>
+                    <section class="image-grid">
+                        {% for img in projeto.imagens_set.all %}
+                        <a href="/media/{{img.img}}">
+                            <img class="galleryImg" src="/media/{{img.img}}" alt="">
+                        </a>
+                        {% endfor %}
+                    </section>
+                    {% endif %}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+{% endblock %}

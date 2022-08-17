@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="col-md-12 portHeader"><h1>Contato</h1></div>
+
+<section class="contato">
+    <div class="container">
+        <div class="row">
+            <div class="postBody contatoBody">
+            {{contato.body|safe}}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

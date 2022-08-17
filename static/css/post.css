@@ -1,0 +1,122 @@
+.portHeader{
+    position: relative;
+    background-color: #2D3E50;
+    text-transform: uppercase !important;
+    text-align: center;
+    padding: 60px 0;
+    color: white;
+}
+
+.portHeader h1{
+    font-family: 'montserratsemi_bold', sans-serif !important;
+}
+
+@media screen and (max-width: 992px) {
+    .projetoPortfolio{
+        margin-top: 5vh !important;
+    }
+    .projetoPortfolio>div>div>div{
+        margin-left: 0 !important;
+        padding: 2vh 0 !important;
+    }
+    .projetoPortfolio>div>div>div>.col-md-4>div>img{
+        padding-bottom: 2vh;
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+}
+
+
+.projetoPortfolio{
+    margin-top: 20vh;
+}
+
+.projetoPortfolio>div>div>div, .sobreBody, .contatoBody{
+    padding: 5vh 0;
+    background-color: rgb(246, 246, 246);
+    border-bottom: 3px solid #e2353a;
+    margin-bottom: 5vh;
+}
+
+.sobreBody, .contatoBody{
+    padding: 5rem;
+}
+
+.sobre,.contato{
+    margin-top: 20vh;
+}
+
+.contatoBody{
+    width: 100%;
+}
+
+.contatoBody a{
+    text-decoration: underline;
+}
+
+.projetoPortfolio>div>div>div>.col-md-4>div>img{
+    margin-left: -45px;
+    width: 370px;
+    max-width: none;
+}
+
+.postBody h1{
+    font-family: 'montserratsemi_bold',sans-serif;
+}
+
+.postBody h2{
+    font-family: 'montserratsemi_bold', sans-serif !important;
+    font-size: 32px;
+    padding-bottom: 15px;
+}
+
+.postBody p{
+    padding: 5px 0;
+    text-indent: 2em;
+    text-align: justify;
+}
+
+.postBody p img{
+    margin-left: -2em;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.postBody span{
+    float: right;
+}
+
+.parceiros {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.parceiro{
+    width: 150px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.parceiro img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    padding-bottom: 5px;
+}
+
+.image-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.image-grid>a{
+    width: 150px;
+    height: 150px;
+}
+
+.galleryImg{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}

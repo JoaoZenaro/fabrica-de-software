@@ -1,0 +1,34 @@
+.carousel-section .item img{
+    max-width: 100%;
+    height: 100%!important;
+    object-fit: cover;
+}
+.espacamento-pesquisa{
+    padding-top: 50px !important;
+}
+@media screen and (min-width: 850px) and (max-width: 1400px){
+    .carousel-section .item{
+        height: 300px;
+    }
+}
+@media screen and (max-width: 849px){
+    .carousel-section .item{
+        height: 300px;
+    }
+}
+@media screen and (min-width: 1401px){
+    .carousel-section .item{
+        height: 400px;
+    }
+}
+@media screen and (max-width: 768px){
+    .carousel-section .item{
+        height: 200px;
+    }
+    .espacamento-pesquisa{
+        padding-top: 20px!important;
+    }
+    .espacamento-pesquisa div div div .section-title-wrapper{
+        margin-bottom: 40px;
+    }
+}
